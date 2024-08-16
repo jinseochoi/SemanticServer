@@ -1,0 +1,38 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"), url("../../fonts/Pretendard-ExtraBold.woff2") format("woff2"), url("../../fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url("../../fonts/Pretendard-Medium.woff2") format("woff2"), url("../../fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Light"), url("../../fonts/Pretendard-Regular.woff2") format("woff2"), url("../../fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"), url("../../fonts/Pretendard-Light.woff2") format("woff2"), url("../../fonts/Pretendard-Light.woff") format("woff");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Pretendard", "Pretendard-Bold", "Pretendard-Medium", "Pretendard-SemiBold" !important;
+  /* 브라우저 인쇄 시 배경색, 배경이미지 보이게 하기 */
+  -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
+  print-color-adjust: exact !important; /*Firefox*/
+}
+
+ol, ul, li {
+  list-style: none;
+}

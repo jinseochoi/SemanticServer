@@ -1,0 +1,94 @@
+$primary: #13C690;
+$primary-50: #86E0C6;
+$primary-20: #CCF0E6;
+$primary-dark: #11AB7D;
+$primary-hover: #12BA87;
+
+$gray-10: #E5E7EB; //table line
+$gray-20: #A9AFBC; //table line
+$gray-30: #9CA3AF; //most light, able
+$gray-40: #667085; //light
+$gray-50: #344054; //normal
+$gray-60: #2C3344; //nav(on)
+$gray-70: #101828; //dark
+$gray-80: #0F172A; //nav
+
+$disabled: #E2E4E7;
+$border: #DCDCDC;
+
+$dg-stripe: #FAFAFA;
+$dg-hover: #F2F2F2;
+$dg-select: #F3FCF9;
+$dg-header: #F8FAFC;
+
+$bg-01: #EDEDED;
+$bg-02: #F1F5F9;
+$bg-03: #F6F9FA;
+$bg-disabled: #F2F3F5;
+$bg-hover: #EDF2F8;
+
+$error: #EF4444;
+$red: #EF4444;
+$bg-red: #EF44441A;
+$yellow: #FF9800;
+$bg-yellow: #FF98001A;
+$green: #10B981;
+$bg-green: #10B9811A;
+$blue: #0EA5E9;
+$bg-blue: #0EA5E91A; 
+$violet: #805DCA;
+$bg-violet: #805DCA1A;
+
+
+$shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
+$shadow-lg: 0px 4px 3px 0px rgba(0, 0, 0, 0.10), 0px 10px 8px 0px rgba(0, 0, 0, 0.04);
+$shadow-md: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
+$shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+$shadow-chip: -6px 0px 4px 0px rgba(0, 0, 0, 0.06) inset;
+$shadow-pop: 2px 0px 5px 0px rgba(0, 0, 0, 0.06);
+
+$drop-shadow: drop-shadow(0px 2px 4px rgba(0, 35, 11, 0.20));
+
+$h-nav: 56px;
+$h-page_title: 84px;
+$h-full: calc(100vh - $h-nav - $h-page_title - 30px);
+
+$h-modal_h: 62px;
+$h-modal_f: 84px;
+$h-modal_b: 760px;
+$h-chips: 60px;
+
+@mixin thin-scrollbar {
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray-10;
+        border-radius: 9999px;
+    }
+}
+
+@mixin no-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin chip-scrollbar {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent
+    }
+    &::-webkit-scrollbar {
+    height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $border;
+    }
+}

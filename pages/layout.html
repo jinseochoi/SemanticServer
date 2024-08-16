@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../contents/styles/css/common.css" rel="stylesheet" />
+    <link href="../contents/styles/icomoon.css" rel="stylesheet" />
+    <link href="../contents/styles/css/layout.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- #menuBtn 클릭 시, 
+        - .layout에 .hide 클래스가 없으면 추가, 있으면 제거
+        - .hide 클래스가 있으면 .icon-menu, 없으면 .icon-menu_open
+    -->
+    <div class="layout //hide">
+        <div class="snb">
+            <div>
+                <div class="logo">
+                    <img src="../contents/images/logo-framework.svg" alt="logo" />
+                </div>
+
+                <div class="menu">
+                    <ul class="level1">
+                        <li>
+                            <div class="lvl1-name">
+                                <p>{level1.name}</p>
+                            </div>
+                            <ul class="level2">
+                                <li>
+                                    <!-- .lvl2-name 클릭 시,
+
+                                        1. level3가 있을 때
+                                            1. level3-wrapper가 닫혀 있을 때 (default)
+                                                - .level3-wrapper에 (.level3 > li개수 * 38px) 만큼의 높이를 줌
+                                                - .icon-arrow_down에 .open 클래스 추가
+                                                - 클릭한 메뉴만 열리도록 다른 .level3-wrapper의 높이를 0으로 줌
+                                                - 다른 .icon-arrow_down에 .open 클래스가 있으면 제거
+                                            2. level3-wrapper가 열려 있을 때
+                                                - .level3-wrapper의 높이를 0으로 줌
+                                                - .icon-arrow_down에 .open 클래스 제거
+
+                                        2. level3가 없을 때
+                                            - .lvl2-name에 해당 하는 페이지로 이동
+                                            - .lvl2-name에 .selected 클래스 추가
+                                     -->
+                                    <div class="lvl2-name //selected">
+                                        <div>
+                                            <i class='icon-user_circle' initial='level2.name[0]'></i>
+                                            <div>
+                                                <p>{level2.name}</p>
+                                                <i class="icon-arrow_down open"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- level3가 없을 때, .level3-wrapper와 하위요소 제거 -->
+                                    <div class="level3-wrapper" style="height: 38px">
+                                        <ul class="level3">
+                                            <!-- li 클릭 시,
+                                                - 해당 메뉴로 이동
+                                                - .lvl3-name 에 .selected 클래스 추가
+                                            -->
+                                            <li>
+                                                <div class="lvl3-name //selected">
+                                                    <div>
+                                                        <i class="icon-null"></i>
+                                                        <p>{level3.name}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <div class="nav-l">
+                    <div id="menuBtn">
+                        <i class="icon-menu_open //icon-menu"></i> 
+                    </div>
+                </div>
+                <div clasa="nav-r">
+                </div>
+            </div>
+            <div class="page">
+                content
+            </div>
+        </div>
+    </div>
+</body>
+</html>
