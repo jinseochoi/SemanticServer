@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?h6uu28');
-  src:  url('../fonts/icomoon.eot?h6uu28#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?h6uu28') format('truetype'),
-    url('../fonts/icomoon.woff?h6uu28') format('woff'),
-    url('../fonts/icomoon.svg?h6uu28#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?ipza78');
+  src:  url('../fonts/icomoon.eot?ipza78#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ipza78') format('truetype'),
+    url('../fonts/icomoon.woff?ipza78') format('woff'),
+    url('../fonts/icomoon.svg?ipza78#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -29,6 +29,57 @@
 }
 
 
+.icon-receipt:before {
+  content: "\e9ad";
+}
+.icon-file_code_2:before {
+  content: "\e9ae";
+}
+.icon-file_settings:before {
+  content: "\e9af";
+}
+.icon-certificate:before {
+  content: "\e9b0";
+}
+.icon-brightness_2:before {
+  content: "\e9b1";
+}
+.icon-device_desktop_cog:before {
+  content: "\e9b2";
+}
+.icon-database_plus:before {
+  content: "\e9b3";
+}
+.icon-hierarchy_3:before {
+  content: "\e9b4";
+}
+.icon-list_details:before {
+  content: "\e9b5";
+}
+.icon-zoom_code:before {
+  content: "\e9b6";
+}
+.icon-code_circle:before {
+  content: "\e9b7";
+}
+.icon-world_cog:before {
+  content: "\e9b8";
+}
+.icon-world_code:before {
+  content: "\e9b9";
+}
+.icon-report_medical:before {
+  content: "\e9ba";
+}
+.icon-report_search:before {
+  content: "\e9bb";
+}
+.icon-forms:before {
+  content: "\e9bc";
+}
+.icon-input_search:before {
+  content: "\e9bd";
+}
 .icon-user_check:before {
   content: "\e9ac";
 }

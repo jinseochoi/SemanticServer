@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../contents/styles/css/common.css" rel="stylesheet" />
+    <link href="../contents/styles/icomoon.css" rel="stylesheet" />
+    <link href="../contents/styles/css/layout.css" rel="stylesheet" />
+    <link href="../contents/styles/css/component.css" rel="stylesheet" />
+    <link href="../contents/styles/css/treeview.css" rel="stylesheet" />
+
+    <!-- js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap-treeview/src/js/bootstrap-treeview.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- ✨ #menuBtn 클릭하면 .layout 토글 됨 (.layout에 hide 클래스 추가하면 .snb 닫힘) -->
+    <div class="layout //hide">
+        <div class="snb">
+            <div>
+                <div class="logo">
+                    <img src="../contents/images/logo-iss.svg" alt="logo" />
+                </div>
+                <div class="menu">
+                    <div id="tree"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="navigation">
+                <div class="nav-l">
+                    <div id="menuBtn">
+                        <!-- ✨ .layout일 때 .icon-menu_open, .layout.hide 일 때 .icon-menu -->
+                        <i class="icon-menu_open //icon-menu"></i> 
+                    </div>
+                    <div class="cur-menu">
+                        <p>Sematic 용어검색</p>
+                        <p>
+                            1뎁스 / <span>2뎁스</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="nav-r">
+                    <div class="dropdown-wrapper">
+                        <!-- ✨.avatar 클릭하면 .dropdown-ix 토글됨 (.dropdown-ix 에 open 클래스 추가하면 열림)-->
+                        <div class='avatar'>
+                            <!-- <img src="../contents/images/avatar-demo.jpg" alt="avatar" /> -->
+                            <!-- ✨만약 사용자 이미지가 없으면 이름이 들어감(최대 2글자) -->
+                            <p>길동</p>
+                        </div>
+                        <div class="dropdown-ix //open">
+                            <div class="admin-title">
+                                <div class='avatar'>
+                                    <img src="../contents/images/avatar-demo.jpg" alt="avatar" />
+                                </div>
+                                <div class="account">
+                                    <p>로그인 정보</p>
+                                    <p>fdjsakf@naver.com</p>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <ul>
+                                    <li>
+                                        <div class="name">
+                                            <p class="menuName">회원정보</p>
+                                            <i class="icon-chevron_right"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="name">
+                                            <p class="menuName">로그아웃</p>
+                                            <i class="icon-chevron_right"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page">
+                content
+            </div>
+        </div>
+    </div>
+
+    <!-- menu tree script -->
+    <script>
+        // ✨ 메뉴 depth에 따른 text 구조
+        // depth1
+        //   text: `<div class='cont'><p class='text'>메뉴 이름</p></div>`
+        // depth2
+        //   [depth3 O] text: `<div class='cont'><p class='text'>메뉴 이름</p><i class='icon-arrow_down'></i></div>` 
+        //   [depth3 X] text: `<div class='cont'><p class='text'>메뉴 이름</p><i class='icon-chevron_right'></i></div>`
+        // depth3
+        //   text: `<div class='cont'><p class='text'>메뉴 이름</p></div>`
+        //   icon: 'icon-null'
+
+
+        var tree = [
+            {
+                text: `<div class='cont'><p class='text'>ISS Contents</p></div>`,
+                selectable: false,
+                state: {
+                    checked: false,
+                    // disabled: true,
+                    expanded: true,
+                    selected: false
+                },
+                nodes: [
+                    {
+                        text: `<div class='cont'><p class='text'>단어검색</p><i class='icon-arrow_down'></i></div>`,
+                        state: {
+                            checked: true,
+                            // disabled: true,
+                            expanded: true,
+                            selected: true
+                        },
+                        icon: 'icon-input_search',
+                        nodes: [
+                            {
+                                text: `<div class='cont'><p class='text'>Grandchild</p></div>`,
+                                icon: 'icon-null',
+                            },
+                        ]
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>단어등록</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-forms',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>Semantic 용어검색</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-report_search',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>용어등록(Semantic ID)</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-report_medical',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>도메인 검색</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-world_code',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>도메인 등록</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-world_cog',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>ecl@ss&CDD list</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-list_check',
+                    },
+                ]
+            },
+            {
+                text: `<div class='cont'><p class='text'>기준정보</p></div>`,
+                state: {
+                    checked: true,
+                    // disabled: true,
+                    expanded: true,
+                    selected: false,
+                },
+                nodes: [
+                    {
+                        text: `<div class='cont'><p class='text'>기준코드 등록</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-code_circle',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>기준코드 검색</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-zoom_code',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>회원사 등록</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-layout_grid_add',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>회원사 목록</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-list_details',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>회사조직 구성</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-hierarchy_3',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>AAS 참조모델 등록</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-database_plus',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>AAS 참조모델 구조</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-treeviewicon',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>시스템 정보 관리</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-device_desktop_cog',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>시스템 구성 PGM 관리</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-brightness_2',
+                    },
+                ]
+            },
+            {
+                text: `<div class='cont'><p class='text'>회원정보&시스템</p></div>`,
+                nodes: [
+                    {
+                        text: `<div class='cont'><p class='text'>사용자정보</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-user_circle',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>권한관리</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-certificate',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>적용업무관리</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-file_settings',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>접속로그</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-file_code_2',
+                    },
+                    {
+                        text: `<div class='cont'><p class='text'>단어/용어 검색로그</p><i class='icon-chevron_right'></i></div>`,
+                        icon: 'icon-receipt',
+                    },
+                ]
+            },
+        ];
+
+        function getTree() {
+            // Some logic to retrieve, or generate tree structure
+            return data;
+        }
+
+        $('#tree').treeview({
+            data: tree,
+            showTags: true
+        });
+    </script>
+</body>
+</html>

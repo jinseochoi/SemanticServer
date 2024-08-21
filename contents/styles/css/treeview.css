@@ -1,0 +1,104 @@
+.snb .treeview .list-group {
+  background-color: transparent;
+  padding: 0px 8px;
+}
+.snb .treeview .list-group .list-group-item {
+  height: 36px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.snb .treeview .list-group .list-group-item .cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 36px);
+}
+.snb .treeview .list-group .list-group-item .cont .text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #9CA3AF;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.snb .treeview .list-group .list-group-item .cont i {
+  font-size: 20px;
+  color: #9CA3AF;
+}
+.snb .treeview .list-group .list-group-item .cont i.icon-chevron_right {
+  font-size: 16px;
+}
+.snb .treeview .list-group .list-group-item .icon.expand-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  z-index: 1;
+}
+.snb .treeview .list-group .list-group-item .icon:not([class*=icon-]) {
+  display: none;
+  width: 0px;
+}
+.snb .treeview .list-group .list-group-item .icon[class*=icon-]:not(.expand-icon) {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  color: #9CA3AF;
+  margin-right: 12px;
+}
+.snb .treeview .list-group .list-group-item .icon[class*=icon-]:not(.expand-icon).icon-null {
+  font-size: 4px;
+  margin-right: 0px;
+}
+.snb .treeview .list-group .list-group-item .icon[class*=icon-]:not(.expand-icon).icon-null ~ .cont {
+  width: calc(100% - 24px);
+}
+.snb .treeview .list-group .list-group-item .indent {
+  margin: 0px;
+}
+.snb .treeview .list-group .list-group-item:not(:has(.indent)) {
+  pointer-events: none;
+  margin-top: 36px !important;
+}
+.snb .treeview .list-group .list-group-item:not(:has(.indent)) .cont {
+  width: 100%;
+}
+.snb .treeview .list-group .list-group-item:not(:has(.indent)) .cont .text {
+  color: #13C690;
+  font-size: 12px;
+}
+.snb .treeview .list-group .list-group-item:not(:has(.indent)) .icon.expand-icon {
+  display: none;
+}
+.snb .treeview .list-group .list-group-item:has(.indent):hover {
+  background-color: #2C3344;
+}
+.snb .treeview .list-group .list-group-item:has(.indent):hover .text {
+  color: #fff;
+}
+.snb .treeview .list-group .list-group-item:has(.indent):hover [class*=icon-] {
+  color: #fff;
+}
+.snb .treeview .list-group .list-group-item:has(.indent).node-selected {
+  background-color: #2C3344 !important;
+}
+.snb .treeview .list-group .list-group-item:has(.indent).node-selected .text {
+  color: #fff;
+}
+.snb .treeview .list-group .list-group-item:has(.indent).node-selected [class*=icon-] {
+  color: #fff;
+}
+.snb .treeview .list-group .list-group-item:not(:first-child) {
+  margin-top: 3px;
+}
+.snb .treeview .list-group .list-group-item:not(:last-child) {
+  margin-bottom: 3px;
+}

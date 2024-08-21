@@ -33,10 +33,15 @@
 
     /* 브라우저 인쇄 시 배경색, 배경이미지 보이게 하기 */
     -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
-    print-color-adjust: exact !important;                 /*Firefox*/
+    print-color-adjust: exact !important; /*Firefox*/
 }
 
 ol, ul, li {
     list-style: none;
-
+    padding: 0px;
+    margin: 0px;
+}
+p {
+    padding: 0px;
+    margin: 0px;
 }

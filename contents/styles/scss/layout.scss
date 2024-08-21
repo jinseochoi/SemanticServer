@@ -42,6 +42,7 @@
 
             .menu {
                 height: calc(100vh - 56px);
+                padding-bottom: 8px;
                 overflow-y: auto;
                 
                 &::-webkit-scrollbar {
@@ -196,7 +197,7 @@
         position: relative;
         transition: 0.3s;
 
-        .nav {
+        .navigation {
             height: $h-nav;
             width: 100%;
             background-color: #fff;
@@ -204,12 +205,16 @@
             align-items: center;
             justify-content: space-between;
             padding: 0px 30px;
-            overflow: hidden;
+            // overflow: hidden;
             border-bottom: 1px solid $border;
             position: relative;
             z-index: 1;
 
             .nav-l {
+                display: flex;
+                align-items: center;
+                gap: 28px;
+
                 #menuBtn {
                     cursor: pointer;
 
@@ -236,11 +241,78 @@
                         }
                     }
                 }
+                .cur-menu {
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $gray-30;
+
+                        span {
+                            color: $gray-40;
+                        }
+
+                        &:first-child {
+                            font-size: 17px;
+                            font-weight: 600;
+                            color: $gray-70;
+                            position: relative;
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                right: -20px;
+                                transform: translateY(-50%);
+                                height: 16px;
+                                width: 1px;
+                                background-color: #CFCFCF;
+                            }
+                        }
+                    }
+                }
             }
             .nav-r {
                 display: flex;
                 align-items: center;
                 gap: 18px;
+
+                .dropdown-wrapper {
+                    position: relative;
+
+                    > .avatar {
+                        width: 30px;
+                        height: 30px;
+                        cursor: pointer;
+
+                        p {
+                            font-size: 12px;
+                            font-weight: 400;
+                            background-color: $yellow;
+                        }
+                    }
+                    .dropdown-ix {
+                        display: none;
+                        top: calc(100% + 10px);
+                        right: 0px;
+
+                        .avatar {
+                            width: 38px;
+                            height: 38px;
+
+                            p {
+                                background-color: $yellow;
+                            }
+                        }
+
+                        &.open {
+                            display: block;
+                        }
+                    }
+                }
             }
         }
 
