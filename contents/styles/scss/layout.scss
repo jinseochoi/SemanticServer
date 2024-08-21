@@ -259,13 +259,16 @@
                             font-size: 17px;
                             font-weight: 600;
                             color: $gray-70;
+                        }
+
+                        &.depth {
                             position: relative;
 
                             &:before {
                                 content: '';
                                 position: absolute;
                                 top: 50%;
-                                right: -20px;
+                                left: -20px;
                                 transform: translateY(-50%);
                                 height: 16px;
                                 width: 1px;

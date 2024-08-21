@@ -213,13 +213,15 @@
   font-size: 17px;
   font-weight: 600;
   color: #101828;
+}
+.layout .main .navigation .nav-l .cur-menu p.depth {
   position: relative;
 }
-.layout .main .navigation .nav-l .cur-menu p:first-child:before {
+.layout .main .navigation .nav-l .cur-menu p.depth:before {
   content: "";
   position: absolute;
   top: 50%;
-  right: -20px;
+  left: -20px;
   transform: translateY(-50%);
   height: 16px;
   width: 1px;

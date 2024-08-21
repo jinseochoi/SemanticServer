@@ -34,15 +34,16 @@
         <div class="main">
             <div class="navigation">
                 <div class="nav-l">
-                    <div id="menuBtn">
+                    <!-- ✨ .layout일 때 data-bs-title="Close", .layout.hide 일 때 data-bs-title="Open" -->
+                    <div id="menuBtn" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Close">
                         <!-- ✨ .layout일 때 .icon-menu_open, .layout.hide 일 때 .icon-menu -->
                         <i class="icon-menu_open //icon-menu"></i> 
                     </div>
                     <div class="cur-menu">
                         <p>Sematic 용어검색</p>
-                        <p>
+                        <!-- <p class="depth">
                             1뎁스 / <span>2뎁스</span>
-                        </p>
+                        </p> -->
                     </div>
                 </div>
                 <div class="nav-r">
@@ -114,7 +115,7 @@
                 },
                 nodes: [
                     {
-                        text: `<div class='cont'><p class='text'>단어검색</p><i class='icon-arrow_down'></i></div>`,
+                        text: `<div class='cont'><p class='text'>단어검색</p><i class='icon-chevron_right'></i></div>`,
                         state: {
                             checked: true,
                             // disabled: true,
@@ -122,12 +123,12 @@
                             selected: true
                         },
                         icon: 'icon-input_search',
-                        nodes: [
-                            {
-                                text: `<div class='cont'><p class='text'>Grandchild</p></div>`,
-                                icon: 'icon-null',
-                            },
-                        ]
+                        // nodes: [
+                        //     {
+                        //         text: `<div class='cont'><p class='text'>Grandchild</p></div>`,
+                        //         icon: 'icon-null',
+                        //     },
+                        // ]
                     },
                     {
                         text: `<div class='cont'><p class='text'>단어등록</p><i class='icon-chevron_right'></i></div>`,
@@ -238,6 +239,11 @@
             data: tree,
             showTags: true
         });
+    </script>
+    <!-- tooltip script -->
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 </body>
 </html>
