@@ -124,6 +124,9 @@
                 &:not(:last-child) {
                     margin-bottom: 3px;
                 }
+                &:first-child:not(:has(.indent)) {
+                    margin-top: 12px !important;
+                }
                 
             }
         }

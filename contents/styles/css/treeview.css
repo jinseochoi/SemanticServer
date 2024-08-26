@@ -102,3 +102,6 @@
 .snb .treeview .list-group .list-group-item:not(:last-child) {
   margin-bottom: 3px;
 }
+.snb .treeview .list-group .list-group-item:first-child:not(:has(.indent)) {
+  margin-top: 12px !important;
+}
