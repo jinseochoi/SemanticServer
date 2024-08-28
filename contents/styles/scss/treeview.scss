@@ -4,10 +4,11 @@
     .treeview { 
         .list-group {
             background-color: transparent;
-            padding: 0px 8px;
+            padding: 0px 6px;
 
             .list-group-item {
                 height: 36px;
+                padding: 0px 14px;
                 background-color: transparent;
                 border: none;
                 border-radius: 4px;
@@ -78,6 +79,7 @@
 
                 //첫번째 노드
                 &:not(:has(.indent)) {
+                    padding: 0px 20px;
                     pointer-events: none;
                     margin-top: 40px !important;
                     margin-bottom: 8px !important;
@@ -98,6 +100,8 @@
 
                 //두번째 이상 노드
                 &:has(.indent) {
+                    margin: 4px 0px;
+
                     &:hover {
                         background-color: $gray-60;
 
@@ -120,14 +124,13 @@
                     }
                 }
 
-                &:first-child {
-                    margin-top: 3px;
-                }
-                &:not(:last-child) {
-                    margin-bottom: 3px;
+                //세번째 이상 노드
+                &:has(.lvl3) {
+                    margin: 3px 0px;
+                    height: 32px;
                 }
                 &:first-child:not(:has(.indent)) {
-                    margin-top: 24px !important;
+                    margin-top: 28px !important;
                 }
                 
             }

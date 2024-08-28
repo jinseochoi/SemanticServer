@@ -42,7 +42,7 @@
 
             .menu {
                 height: calc(100vh - 56px);
-                padding-bottom: 8px;
+                padding-bottom: 4px;
                 overflow-y: auto;
                 @include nav-scrollbar;
 

@@ -1,9 +1,10 @@
 .snb .treeview .list-group {
   background-color: transparent;
-  padding: 0px 8px;
+  padding: 0px 6px;
 }
 .snb .treeview .list-group .list-group-item {
   height: 36px;
+  padding: 0px 14px;
   background-color: transparent;
   border: none;
   border-radius: 4px;
@@ -65,6 +66,7 @@
   margin: 0px;
 }
 .snb .treeview .list-group .list-group-item:not(:has(.indent)) {
+  padding: 0px 20px;
   pointer-events: none;
   margin-top: 40px !important;
   margin-bottom: 8px !important;
@@ -79,6 +81,9 @@
 }
 .snb .treeview .list-group .list-group-item:not(:has(.indent)) .icon.expand-icon {
   display: none;
+}
+.snb .treeview .list-group .list-group-item:has(.indent) {
+  margin: 4px 0px;
 }
 .snb .treeview .list-group .list-group-item:has(.indent):hover {
   background-color: #2C3344;
@@ -98,12 +103,10 @@
 .snb .treeview .list-group .list-group-item:has(.indent).node-selected [class*=icon-] {
   color: #fff;
 }
-.snb .treeview .list-group .list-group-item:first-child {
-  margin-top: 3px;
-}
-.snb .treeview .list-group .list-group-item:not(:last-child) {
-  margin-bottom: 3px;
+.snb .treeview .list-group .list-group-item:has(.lvl3) {
+  margin: 3px 0px;
+  height: 32px;
 }
 .snb .treeview .list-group .list-group-item:first-child:not(:has(.indent)) {
-  margin-top: 24px !important;
+  margin-top: 28px !important;
 }
