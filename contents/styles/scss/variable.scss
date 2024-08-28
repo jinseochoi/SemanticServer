@@ -92,3 +92,17 @@ $h-chips: 60px;
         background-color: $border;
     }
 }
+
+@mixin nav-scrollbar {
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #E5E7EB; /* 스크롤바의 색상 */
+        border-radius: 999px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #F1F5F933;  /*스크롤바 뒷 배경 색상*/
+    }
+}

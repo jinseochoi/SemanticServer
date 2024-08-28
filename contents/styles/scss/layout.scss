@@ -44,10 +44,7 @@
                 height: calc(100vh - 56px);
                 padding-bottom: 8px;
                 overflow-y: auto;
-                
-                &::-webkit-scrollbar {
-                    display: none;
-                }
+                @include nav-scrollbar;
 
                 .level1 {
                     padding: 40px 8px;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .layout {
   position: relative;
   width: 100vw;
@@ -39,7 +40,15 @@
   overflow-y: auto;
 }
 .layout .snb > div .menu::-webkit-scrollbar {
-  display: none;
+  width: 4px;
+  height: 4px;
+}
+.layout .snb > div .menu::-webkit-scrollbar-thumb {
+  background-color: #E5E7EB; /* 스크롤바의 색상 */
+  border-radius: 999px;
+}
+.layout .snb > div .menu::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.2); /*스크롤바 뒷 배경 색상*/
 }
 .layout .snb > div .menu .level1 {
   padding: 40px 8px;
